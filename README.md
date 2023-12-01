@@ -159,6 +159,22 @@ object diabetesMed: if diabetic medications were prescribed
 object readmitted: if the patient was readmitted within >30 days or <30 days or No
 
 
+VARIABLE ADDED AND DROP
+-> To limit the number of diagnostic categories (more than 700) we can regroup them in only 19 disease types 
+-> numerics : only integer informations of our dataset
+-> rare_medicine : regoup 13 medicines used by less than 2% of the dataset population. We regrouped them together in rare_medicine=1 if one was taken 0 if none.
+-> df_medocs_diabeth : dataset for only patient whom diabeth medicines has been prescribed
+->readmitted_nbr : number of patient’s readmissions per patient
+-> weight, payer_code, medical_specialty because too much missing values, plus three medicaments prescribed to no one where deleted
+
+
+
+REFLEXION AND CONCLUSION
+We are choosing categorical model: Logistic regression, Gradient Boosting Classifier and Random Forest. The last two are supposed to be more efficient as they can detect non linear correlation between variables. In our data set there is not a lot of variable linear correlated to our target variable, consequently Gradient Boosting Classifier and Random Forest should provide us better results.
+We found a final correlation with Random Forest and  Gradient Boosting Classifier around 78%. We know that two patient with the same info can one be readmitted and the other not. So 78% is a really good prediction. It will allow the hospital to prepare themself witch patient are going to come back.
+
+
+
 NECESSARY IMPORTS
 
 
